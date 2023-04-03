@@ -1,0 +1,32 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+
+[[ $- != *i* ]] && return
+
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+PS1='[\u@\h \W]\$ '
+
+lol()
+{
+    if [ -t 1 ]; then
+        "$@" | lolcat
+    else
+        "$@"
+    fi
+}
+
+COMMANDS=(
+    #ls
+)
+
+for COMMAND in "${COMMANDS[@]}"; do
+    alias "${COMMAND}=lol ${COMMAND}"
+    alias ".${COMMAND}=$(which ${COMMAND})"
+done
+
+#Aliases
+alias mewo='exit'
