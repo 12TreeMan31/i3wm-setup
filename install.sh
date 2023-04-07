@@ -10,6 +10,7 @@ pkgs=(
     "feh"
     "gtk3"
     "flameshot"
+    "neofetch"
     "noto-fonts"
     "noto-fonts-cjk"
     "noto-fonts-emoji"
