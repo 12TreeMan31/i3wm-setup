@@ -1,6 +1,5 @@
 #!/bin/bash
-
-#Script for installing the needed packages
+#Script for setting up WM
 
 pkgs=(
     "xorg"
@@ -21,9 +20,13 @@ do
    pacman -S --needed --noconfirm $i
 done
 
+#Check out i3status-rust and st
 cp ./dotfiles/i3-config ~/.config/i3/config
 cp ./dotfiles/flameshot.config ~/.config/flameshot/flameshot.ini
 cp ./dotfiles/gtk3-config ~/.config/gtk-3.0/settings.ini
 cp ./dotfiles/bashrc ~/.bashrc
 cp ./dotfiles/xinitrc ~/.xinitrc
 cp ./dotfiles/Xresources ~/.Xresources
+
+
+read -p "Desktop? [y/n]: " isDesktop
